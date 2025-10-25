@@ -1,0 +1,102 @@
+********************** Why Playwright? *******************
+Reliable End-to-End Testing-> Auto-wait capability
+Cross-Browser compatibility
+Multiplatform support
+Multilingual Flexibility
+
+********************* Official Documentation ********************
+# https://playwright.dev/docs/intro
+
+
+******************** Advanced Features *********************
+Tracking & Debugging
+Network Interception
+Browser Context Management
+Codegen Tool
+
+********************* To start with ********************
+Node.js install
+Environmental Variable set - NODE_HOME & Path
+Editor VS code
+
+********************* Creating project ********************
+Create Empty folder => Terminal =? npm init playwright / npm init playwright@latest
+(Create new node project)(it will create playwright project with all the dependencies)
+
+playwright.config.js => Test runner
+package.json         => must default
+package-lock.json    => ignore
+node_modules         => All installed jars, without this no node project
+
+********************* Ruuning order ********************
+tests present in single class will run sequencially
+multiple test class will run parallely
+
+
+********************* Writing CSS Selector ********************
+
+If id is present
+css -> tagname#id / #id
+
+If class attribute is present
+css -> tagname.class /  .class
+
+Write css based on any attributes
+tagname[attribute='value'] /  [attribute='value']
+
+Write css with traversing from parent to child
+css -> parentTagName >> childTagName
+
+If needs to write the locator based on text
+text=''
+
+sudo class
+tagname:has-text("textname")
+
+
+getByRole('button',{name:"Login"})
+
+getByPlaceholder("enter your passsword")
+
+getByText("ZARA COAT 3")
+
+getByLabel('User Name')
+
+Filter:
+page.locator(".card-body").filter({hasText:"ZARA COAT 3"}).getByRole("button",{name:"Add to Cart"}).click();
+
+
+********************* How to Run ********************
+npx playwright --version
+Running test(default headless mode) => npx playwright test 
+Headed mode                         => npx playwright test --headed
+Run a single project/browser        => npx playwright test --project=chromium
+To run a test with a specific title => npx playwright test -g "add a todo item"
+To run only the tests that failed in
+ the last test run                  => npx playwright test --last-failed
+only running one test class         => npx playwright test tests/ExcerciseTest.spec.js
+To run in debug mode                => npx playwright test tests/DebugEgTest.spec.js --debug
+Record and Playback run             => npx playwright codegen url
+UI Run                              => npx playwright test --ui
+To use specific cinfig file         => npx playwright test tests/DebugEgTest.spec.js --config playwright.config1.js
+To run specific annotated test      => npx playwright test --grep @Web
+we can also specify all the test names 
+in package.json and run             =>  npm run WebTests
+To install exceljs                   => npm install exceljs --savedev
+Report                  => npx playwright show-report
+
+CodeGen                 =>  npx playwright codegen demo.playwright.dev/todomvc
+
+********************* How to retrieve Trace ********************
+https://trace.playwright.dev/
+
+
+********************* Allure Reporting ********************
+install : npm i -D #playwright/test allure-playwright
+npx playwright test --grep @Web --reporting=line,allure-playwright
+allure generate ./allure-results --clean
+allure open ./allure-report
+
+
+
+
