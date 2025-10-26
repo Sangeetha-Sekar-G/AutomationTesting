@@ -17,9 +17,10 @@ test('Extranet Policy Cancellation - Search by Contract No', async({page}) =>
 
   await page.locator("[src='Image/cancel.png']").click();
   await page.locator('textarea').click();
-  await page.locator('textarea').fill('Businnes Requested to Cancel');
+  await page.locator('textarea').fill('Business Requested to Cancel');
   await page.getByText('Validate', { exact: true }).click();
   await page.getByText('Yes').click();
   
   
 });
+
