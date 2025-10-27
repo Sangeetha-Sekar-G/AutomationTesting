@@ -3,3 +3,12 @@ https://tcsglobal.udemy.com/course/playwright-tutorials-automation-testing/learn
 
 
 
+https://rahulshettyacademy.com/
+
+
+
+
+https://rsteksolutions.com/placement-assistance
+
+
+
